@@ -19,16 +19,23 @@ useEffect(()=>{
 }, [])
 return (
     <>
-      <h2>GitHub Users</h2>
+      <div class="container">
+        <div class="heading"><span>GitHub Users &#8702;</span>
+        </div>
+      </div>
+
+
       <ul className='users'>
         {user.map((user)=>{
           const {id, login, avatar_url, html_url} = user;
           return(
             <li key={id}>
-              <img src={avatar_url} alt={login} />
-              <div>
-                <h5>{login}</h5>
-                <a href={html_url}>Profile</a>
+              <div className='profile'>
+                <img src={avatar_url} alt={login} />
+                <div className='name'>
+                  <h4>{login}</h4>
+                  <a href={html_url}>Profile</a>
+                </div>
               </div>
             </li>
           )

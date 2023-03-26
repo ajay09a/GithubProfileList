@@ -24,23 +24,24 @@ return (
         </div>
       </div>
 
-
-      <ul className='users'>
-        {user.map((user)=>{
-          const {id, login, avatar_url, html_url} = user;
-          return(
-            <li key={id}>
-              <div className='profile'>
-                <img src={avatar_url} alt={login} />
-                <div className='name'>
-                  <h4>{login}</h4>
-                  <a href={html_url}>Profile</a>
+      <div className='main'>
+        <ul className='users'>
+          {user.map((user)=>{
+            const {id, login, avatar_url, html_url} = user;
+            return(
+              <li key={id}>
+                <div className='profile'>
+                  <img src={avatar_url} alt={login} />
+                  <div className='name'>
+                    <h4>{login}</h4>
+                    <a href={html_url}>Profile</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-          )
-        })}
-      </ul>
+              </li>
+            )
+          })}
+        </ul>
+        </div>
     </>
 )
 }
